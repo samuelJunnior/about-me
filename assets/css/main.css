@@ -196,7 +196,7 @@ body {
 	height: auto;
 }
 
-.hard-skills-grid img:hover {
+.hard-skills-grid img:hover, .hard-skills-grid img:active {
 	animation: jump 2s alternate infinite;
 }
 
@@ -271,6 +271,51 @@ body {
 
 }
 
+@keyframes jump {
+    0% {
+        transform: translateY(0);
+    }
+    100% {
+        transform: translateY(-10px);
+    }
+}
+
+@media (min-width: 501px) and (max-width: 1200px){
+	.brain-skills {
+		gap: 50px;
+	}
+
+	.hard-skills-grid{
+		width: 33%;
+		grid-template-columns: repeat(3, 1fr);
+	}
+	.hard-skills-grid img {
+		max-width: 50px;
+	}
+
+	.brain{
+		width: 0%;
+	}
+
+	.soft-skills-grid{
+		width: 33%;
+		grid-template-columns: repeat(1, 1fr);
+	}
+
+	.experiences-row{
+		flex-direction: column;
+		padding-bottom: 20px;
+		border-bottom: solid 1px var(--secondary-color);
+	}
+
+	.experiences-data{
+		width: 100%;
+		border-right: none;
+		border-bottom: solid 1px var(--tertiary-color);
+		padding-bottom: 20px;
+	}
+}
+
 @media (max-width: 500px) {
 	.content {
 		flex-direction: column;
@@ -288,6 +333,8 @@ body {
 		width: 50%;
 		grid-template-columns: repeat(3, 1fr);
 		gap:15px;
+		border-right: solid 1px var(--secondary-color);
+		padding-right: 10px;
 	}
 
 	.brain{
